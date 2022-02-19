@@ -19,6 +19,15 @@ class Tendril
   }
   public void show()
   {
+    if(myNumSegments>10){
+      stroke(50,5,250);
+    }
+    else if(myNumSegments>=5){
+      stroke(5,200,50);
+    }
+    else{
+      stroke(200,50,5);
+    }
     int startX=myX;
     int endX=myX;
     int startY=myY;
@@ -33,6 +42,17 @@ class Tendril
     }
     if (myNumSegments>=3) {
       new Cluster(myNumSegments/3, endX, endY);
+    }
+  }
+}
+public class Cluster
+{
+  public final static int NUM_STEMS = 7;
+  public Cluster(int len, int x, int y)
+  {
+    for (int i=0; i<=NUM_STEMS; i++) {
+      Tendril bob=new Tendril(len, Math.random()*TWO_PI, x, y);
+      bob.show();
     }
   }
 }
