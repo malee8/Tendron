@@ -19,6 +19,5 @@ public void mousePressed()
   bg1=(int)(Math.random()*256);
   bg2=(int)(Math.random()*256);
   bg3=(int)(Math.random()*256);
-  stroke(bg2, bg3, bg1);
   redraw();
 }
